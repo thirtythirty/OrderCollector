@@ -25,9 +25,9 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
     respond_to do |format|
       if @order.save
+        OrderMailer.ordered_mail.deliver_now
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
