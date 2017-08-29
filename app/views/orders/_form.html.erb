@@ -23,17 +23,23 @@
 
   <div class="field">
     <%= form.label :dish %>
-    <%= form.text_field :dish, id: :order_dish %>
+    <%#= form.text_field :dish, id: :order_dish %>
+    <%= form.select :dish, Order.dish.options %>
+
   </div>
 
   <div class="field">
     <%= form.label :rice %>
-    <%= form.text_field :rice, id: :order_rice %>
+    <%#= form.text_field :rice, id: :order_rice %>
+        <%= form.select :rice, Order.rice.options %>
+
   </div>
 
   <div class="field">
     <%= form.label :take_out %>
-    <%= form.text_field :take_out, id: :order_take_out %>
+    <%#= form.text_field :take_out, id: :order_take_out %>
+            <%= form.select :take_out, Order.take_out.options %>
+
   </div>
 
   <div class="field">
